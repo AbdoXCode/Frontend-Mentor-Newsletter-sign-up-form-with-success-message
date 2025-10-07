@@ -1,0 +1,224 @@
+:root {
+  --Blue800: hsl(234, 29%, 20%);
+  --Blue-700: hsl(235, 18%, 26%);
+  --Grey: hsl(0, 0%, 58%);
+  --White: hsl(0, 0%, 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--Blue800);
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  border-radius: 30px;
+  padding: 30px;
+  max-width: 800px;
+  gap: 50px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.heading {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--Blue-700);
+  margin-bottom: 1.5rem;
+}
+.sub-heading {
+  font-size: 0.9rem;
+  color: var(--Blue-700);
+  margin-bottom: 2.5rem;
+}
+.image {
+  height: 100%;
+  width: 100%;
+}
+ul {
+  list-style-position: inside;
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+ul li {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 10px;
+  color: var(--Blue800);
+  font-weight: 450;
+  font-size: 0.9rem;
+}
+ul li::before {
+  content: "";
+  background: url("./assets/images/icon-list.svg") no-repeat center/contain;
+  width: 20px;
+  height: 20px;
+}
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.email-label-div {
+  display: flex;
+  font-size: 0.8rem;
+  justify-content: space-between;
+}
+.email-label {
+  color: var(--Blue-700);
+  font-weight: 700;
+}
+.email-label-div p {
+  color: hsl(4, 100%, 67%);
+  font-weight: 500;
+  display: none;
+}
+.input {
+  border-radius: 8px;
+  font: inherit;
+}
+.email {
+  padding: 1rem;
+  border: 1px solid var(--Grey);
+  outline: none;
+}
+.email:focus {
+  border: 1px solid rgb(0, 0, 0);
+}
+.submit {
+  background-color: var(--Blue-700);
+  color: var(--White);
+  border: none;
+  padding: 20px 0;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.submit:hover,
+.dismiss:hover {
+  background-color: var(--Blue800);
+}
+input.error,
+input.error:focus {
+  background-color: #ffe8e6;
+  color: hsl(4, 100%, 67%);
+  border: 1px solid hsl(4, 100%, 67%);
+}
+.sucess-content {
+  background-color: white;
+  max-width: 300px;
+  padding: 30px;
+  border-radius: 30px;
+}
+.sucess-content img {
+  width: 40px;
+  margin-bottom: 20px;
+}
+.sucess-content h1 {
+  color: var(--Blue800);
+  line-height: 1;
+  font-size: 2.1rem;
+  margin-bottom: 20px;
+}
+.sucess-content p {
+  color: var(--Blue800);
+  font-size: 0.65rem;
+  margin-bottom: 20px;
+}
+#span-email {
+  color: var(--Blue-700);
+  font-weight: 900;
+}
+.dismiss {
+  background-color: var(--Blue-700);
+  width: 100%;
+  color: var(--White);
+  border: none;
+  padding: 15px 0;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  body {
+    display: block;
+    height: 100dvh;
+  }
+  main {
+    min-height: 100dvh;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    border-radius: 0;
+    gap: 0;
+    padding: 0;
+    max-height: fit-content;
+  }
+  .image {
+    order: -1;
+    content: url("./assets/images/illustration-sign-up-mobile.svg");
+  }
+  .content {
+    padding: 30px;
+    display: block;
+  }
+  .heading {
+    font-size: 3rem;
+  }
+  .content p,
+  li {
+    font-size: 1.1rem;
+  }
+  ul {
+    margin-bottom: 2rem;
+  }
+  #success-container {
+    height: 100%;
+  }
+  .sucess-content {
+    border-radius: 0;
+    max-width: max-content;
+    height: inherit;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .sucess-content img {
+    width: 60px;
+    margin-bottom: 40px;
+  }
+  .sucess-content h1 {
+    font-size: 2.5rem;
+  }
+  .sucess-content p {
+    font-size: 1rem;
+    margin-bottom: auto;
+  }
+}
+@media (max-width: 768px) and (min-width: 481px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .image {
+    order: -1;
+    content: url("./assets/images/illustration-sign-up-tablet.svg");
+  }
+}
