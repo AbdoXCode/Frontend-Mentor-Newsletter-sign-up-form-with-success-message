@@ -181,7 +181,7 @@ input.error:focus {
   .heading {
     font-size: 3rem;
   }
-  .content p,
+  .content p:not(#error),
   li {
     font-size: 1.1rem;
   }
@@ -220,7 +220,6 @@ input.error:focus {
   main {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
-    /* min-height: 90dvh; */
   }
   .image {
     order: -1;
